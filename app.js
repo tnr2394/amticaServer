@@ -18,9 +18,9 @@ app.use(fileUpload());
 app.use(cors());
 
 // app.options('*', cors()) // include before other routes 
-app.set('superSecret', 'samsarcom'); // secret variable
+app.set('superSecret', 'amtica'); // secret variable
 
-mongoose.connect('mongodb://localhost/samsarcom', {
+mongoose.connect('mongodb://localhost/amtica', {
     reconnectTries: Number.MAX_VALUE,
     reconnectInterval: 1000
 });  
@@ -41,7 +41,7 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../samsarServer')));
+app.use(express.static(path.join(__dirname, '../amtikaServer')));
 console.log("dirname",__dirname);
 app.use('/user', users);
 
